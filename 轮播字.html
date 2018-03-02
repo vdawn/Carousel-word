@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>轮播字 - 面试题讲解</title>
+  <style>
+    div{
+      margin: 200px auto;
+      width: 800px;
+      height: 50px;
+      border:1px solid black;
+      text-align: center;
+
+      overflow: hidden;
+    }
+    a{
+      text-decoration: none;
+      color:red;
+      display:block;
+      font-size: 30px;
+      height: 50px;
+      line-height: 50px;
+      transition:all 3s;
+    }
+    a:first-child{
+      margin-top: -50px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <a href="#"> 老和尚非要给小和尚讲故事     </a>
+    <a href="#"> 从前有一座山，山上有做一座庙 </a>
+    <a href="#"> 庙里有一个老和尚和一个小和尚 </a>
+    <a href="#"> 老和尚在给小和尚讲故事       </a>
+    <a href="#"> 小和尚不想听老和尚讲故事     </a>
+  </div>
+  <script>
+    var a,b;                                      // 先声明好变量,在计时器中只赋值
+    a = document.getElementsByTagName("div")[0];  // 获取父元素
+    setInterval(function () {
+      b = document.getElementsByTagName("a")[0];  // 获取第一个子元素
+      a.appendChild(b);                           // 将第一个子元素放到最后面
+    }, 5000);
+  </script>
+</body>
+</html>
